@@ -1,25 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer async></script>
+    <title>Snake Game</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer async></script>
-  <title>Snake Game</title>
-</head>
-
-<body>
-  <div id="root">
-    <!-- <canvas id="board"></canvas> -->
-    <div id="game">
+  <body>
+    <div id="root">
+      <!-- <canvas id="board"></canvas> -->
+       <div id="game" style="min-height: 0; min-width: 0;"> 
       <div class="snake"></div>
-      <div class="snake"></div>
-      <div class="snake"></div>
-      <img src="https://playsnake.org/assets/images/food.svg" alt="food" class="food">
+      <img
+        src="https://playsnake.org/assets/images/food.svg"
+        alt="food"
+        class="food"
+      />
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  </body>
 </html>
