@@ -1,70 +1,97 @@
-const snake = document.querySelectorAll(".snake");
-const food = document.querySelector(".food");
-const gameborad = document.getElementById("game");
-const snakePosition = { x: 0, y: 0 };
-let foodIntial = { x: 0, y: 0 };
-const snakeCoord = [
-  { x: 1, y: 1 }, // head
-  { x: 2, y: 1 }, // body
-  { x: 3, y: 1 }, // tail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ 
+const board = document.getElementById('game-board');
+
+// Grid dimensions
+const GRID_SIZE = 20;
+
+// Snake state
+let snake = [
+  { x: 10, y: 11 },
+  { x: 10, y: 12 },
+  { x: 10, y: 13 }
 ];
+let direction = { x: 0, y: -1 }; // Moving UP initially
 
-/*const speed = setInterval(() => {
-  let y = 1;  
-  snake.forEach((s)=>{
-     s.style.gridRowStart = y++;
-  })
-}, 1000);
-*/
+// 1. Listen for arrow keys to change direction
+window.addEventListener('keydown', e => {
+  switch (e.key) {
+    case 'ArrowUp':    if (direction.y !== 0) break; direction = { x: 0, y: -1 }; break;
+    case 'ArrowDown':  if (direction.y !== 0) break; direction = { x: 0, y: 1 }; break;
+    case 'ArrowLeft':  if (direction.x !== 0) break; direction = { x: -1, y: 0 }; break;
+    case 'ArrowRight': if (direction.x !== 0) break; direction = { x: 1, y: 0 }; break;
+  }
+});
 
+// 2. The Game Loop
+function main() {
+  update();
+  draw();
+  setTimeout(main, 150); // Controls game speed (150ms per step)
+}
+
+// 3. Move the snake mathematically
+function update() {
+  // Calculate new head position
+  const newHead = { 
+    x: snake[0].x + direction.x, 
+    y: snake[0].y + direction.y 
+  };
+
+  // Add new head
+  snake.unshift(newHead); 
+  
+  // Remove tail (Skip this step if the snake eats food to make it grow)
+  snake.pop(); 
+}
+
+// 4. Render the snake on the CSS Grid
 function draw() {
-  snake.forEach((s, idx) => {
-    s.style.gridColumnStart = snakeCoord[idx].x;
-    s.style.gridRowStart = snakeCoord[idx].y;
+  board.innerHTML = ''; // Clear previous frame
+  
+  snake.forEach(segment => {
+    const snakeElement = document.createElement('div');
+    
+    // CSS Grid coordinates start at 1, not 0
+    snakeElement.style.gridRowStart = segment.y;
+    snakeElement.style.gridColumnStart = segment.x;
+    
+    snakeElement.classList.add('snake');
+    board.appendChild(snakeElement);
   });
 }
 
-function rm_num() {
-  const x = Math.floor(Math.random() * 9);
-  const y = Math.floor(Math.random() * 9);
-  foodIntial.x += x;
-  foodIntial.y += y;
-}
-
-const movesnake = (position) => {
-  food.style.gridColumnStart = foodIntial.x;
-  food.style.gridRowStart = foodIntial.y;
-
-  if (snakeCoord[0].x === foodIntial.x && snakeCoord[0].y === foodIntial.y) {
-       console.log(snakeCoord[0].x , snakeCoord[0].y , foodIntial.x , foodIntial.y)  
-              rm_num();
-    console.log("eating");
-  }
-
-   console.log(snakeCoord[0].x , snakeCoord[0].y , foodIntial.x , foodIntial.y)  
-
-
-  if (position === "down") {
-    snakeCoord.unshift({ x: snakePosition.x, y: snakePosition.y++ });
-    snakeCoord.pop();
-  } else if (position === "right") {
-    snakeCoord.unshift({ x: snakePosition.x++, y: snakePosition.y });
-    snakeCoord.pop();
-  } else if (position === "up") {
-    snakeCoord.unshift({ x: snakePosition.x, y: snakePosition.y-- });
-    snakeCoord.pop();
-  } else if (position === "left") {
-    snakeCoord.unshift({ x: snakePosition.x--, y: snakePosition.y });
-    snakeCoord.pop();
-  }
-};
-
-window.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowUp") movesnake("up");
-  if (e.key === "ArrowDown") movesnake("down");
-  if (e.key === "ArrowLeft") movesnake("left");
-  if (e.key === "ArrowRight") movesnake("right");
-  draw();
-});
-
-draw();
+// Start the game
+main();
+ */
