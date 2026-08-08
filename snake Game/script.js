@@ -1,33 +1,79 @@
+const game_board = document.getElementById("gameborad");
+const snake = document.querySelectorAll(".snake");
 
+let direction = { x: 0, y: -1 };
+const grid = 10;
 
+let coordinates = [
+  { x: 0, y: 0 },
+  { x: 0, y: 0 },
+  { x: 0, y: 0 },
+];
 
+// the main fun that crate new head move the snake
+const main = function () {
+  let newhead = {};
 
+  if (direction.x === 0) {
+    newhead = {
+      x: direction.x,
+      y: ++direction.y,
+    };
+  } else {
+    newhead = {
+      x: ++direction.x,
+      y: direction.y,
+    };
+  }
+  coordinates.unshift(newhead);
 
+  //const snake_div = document.createElement("div");
+  //snake_div.classList.add("snake");
+  //  game_board.appendChild(snake_div);
 
+  snake.forEach((sk, idx) => {
+    sk.style.gridColumnStart = coordinates[idx].x;
+    sk.style.gridRowStart = coordinates[idx].y;
+  });
 
+  coordinates.pop();
+};
 
+function speed() {
+  main();
 
+  if (coordinates[0].y >= grid || coordinates[0].x >= grid) {
+    clearInterval(interval);
+  }
+  if (coordinates[0] === -1 || coordinates[0].x === -1) clearInterval(interval);
+}
 
+const interval = setInterval(speed, 300);
 
+const gameStart = () => {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowUp") {
+    }
+    if (e.key === "ArrowRight") {
+      direction.y = coordinates[0].y;
+    }
+    if (e.key === "ArrowLeft") {
+    }
+    if (e.key === "ArrowDown") {
+      direction.x = 0;
+      direction.y = coordinates[0].y;
+    }
+  });
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.addEventListener("DOMContentLoaded", () => {
+  gameStart();
+});
+//if (direction.y >= grid || direction.x >= grid) {
+//console.log("stop");
+//clearInterval(interval);
+//} else console.log("conitinous");
+//speed()
 
 /*
  
