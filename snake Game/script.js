@@ -1,7 +1,8 @@
 const game_board = document.getElementById("gameborad");
 const snake = document.querySelectorAll(".snake");
 
-let direction = { x: 0, y: -1 };
+let position = { x: 0, y: -1 };
+let direction = "down";
 const grid = 10;
 
 let coordinates = [
@@ -14,19 +15,28 @@ let coordinates = [
 const main = function () {
   let newhead = {};
 
-  if (direction.x === 0) {
+  if (direction === "down") {
     newhead = {
-      x: direction.x,
-      y: ++direction.y,
+      x: position.x,
+      y: ++position.y,
     };
-  } else {
+  } else if (direction === "right") {
     newhead = {
-      x: ++direction.x,
-      y: direction.y,
+      x: ++position.x,
+      y: position.y,
+    };
+  } else if (direction === "left") {
+    newhead = {
+      x: --position.x,
+      y: position.y,
+    };
+  } else if (direction === "up") {
+    newhead = {
+      x: position.x,
+      y: --position.y,
     };
   }
   coordinates.unshift(newhead);
-
   //const snake_div = document.createElement("div");
   //snake_div.classList.add("snake");
   //  game_board.appendChild(snake_div);
@@ -42,26 +52,25 @@ const main = function () {
 function speed() {
   main();
 
-  if (coordinates[0].y >= grid || coordinates[0].x >= grid) {
-    clearInterval(interval);
-  }
-  if (coordinates[0] === -1 || coordinates[0].x === -1) clearInterval(interval);
+  if (coordinates[0].y === grid || coordinates[0].x === grid) clearInterval(interval);
+  else if (coordinates[0].y === -1 || coordinates[0].x === -1) clearInterval(interval);
 }
 
-const interval = setInterval(speed, 300);
+const interval = setInterval(speed, 150);
 
 const gameStart = () => {
   document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowUp") {
+    if (e.key === "ArrowUp" && e.key !== "ArrowDown") {
+      direction = "up";
     }
-    if (e.key === "ArrowRight") {
-      direction.y = coordinates[0].y;
+    if (e.key === "ArrowRight" && e.key !== "ArrowLeft") {
+      direction = "right";
     }
-    if (e.key === "ArrowLeft") {
+    if (e.key === "ArrowLeft" && e.key !== "ArrowRight") {
+      direction = "left";
     }
-    if (e.key === "ArrowDown") {
-      direction.x = 0;
-      direction.y = coordinates[0].y;
+    if (e.key === "ArrowDown" && e.key !== "ArrowUp") {
+      direction = "down";
     }
   });
 };
