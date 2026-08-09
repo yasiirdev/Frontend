@@ -1,5 +1,6 @@
 const game_board = document.getElementById("gameborad");
 const snake = document.querySelectorAll(".snake");
+const foodSvg = document.getElementById("food");
 
 let position = { x: 0, y: -1 };
 let direction = "down";
@@ -12,7 +13,7 @@ let coordinates = [
 ];
 
 // the main fun that crate new head move the snake
-const main = function () {
+const upDate = function () {
   let newhead = {};
 
   if (direction === "down") {
@@ -49,8 +50,33 @@ const main = function () {
   coordinates.pop();
 };
 
+const foodPosition = () => {
+  const x_random = Math.floor(Math.random() * grid);
+  const y_random = Math.floor(Math.random() * grid);
+
+  foodSvg.style.gridColumnStart = x_random;
+  foodSvg.style.gridRowStart = y_random;
+};
+
+foodPosition();
+
+const draw = () => {};
+
 function speed() {
-  main();
+  upDate();
+
+  if (
+    coordinates[0].x === Number(foodSvg.style.gridColumnStart) &&
+    coordinates[0].y === Number(foodSvg.style.gridRowStart)
+  ) {
+    foodPosition();
+    const snake_div = document.createElement("div");
+    snake_div.style.gridColumnStart = coordinates[0].x;
+    snake_div.style.gridRowStart = coordinates[0].y;
+    snake_div.classList.add("snake");
+    game_board.appendChild(snake_div);
+    coordinates.unshift({ x: coordinates[0].x, y: coordinates[0].y });
+  }
 
   if (coordinates[0].y === grid || coordinates[0].x === grid) clearInterval(interval);
   else if (coordinates[0].y === -1 || coordinates[0].x === -1) clearInterval(interval);
@@ -58,7 +84,7 @@ function speed() {
 
 const interval = setInterval(speed, 150);
 
-const gameStart = () => {
+const eventStart = () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowUp" && e.key !== "ArrowDown") {
       direction = "up";
@@ -76,8 +102,9 @@ const gameStart = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  gameStart();
+  eventStart();
 });
+
 //if (direction.y >= grid || direction.x >= grid) {
 //console.log("stop");
 //clearInterval(interval);
