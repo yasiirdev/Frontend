@@ -45,11 +45,12 @@ body {
   background: greenyellow;
   border: 2px solid violet;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 }
 
 .food {
   width: 20px;
   height: 20px;
+  z-index: 1000;
 }
