@@ -2,7 +2,7 @@ import Input from "./input";
 export default function Hero() {
   return (
     <>
-      <div className="bg-[#F1F8E9]">
+      <div className="bg-main font-Inter">
              <div className="relative isolate px-6 lg:px-8">
                <div
                  aria-hidden="true"
@@ -27,20 +27,22 @@ export default function Hero() {
                    </div>  
                  </div>
                  <div className="text-center">
-                   <h1 className="text-4xl font-semibold capitalize tracking-tight text-balance text-[#185E20] sm:text-6xl">
+                   <h1 className="text-4xl font-bold capitalize tracking-tight text-balance text-[#185E20] sm:text-6xl">
                      shop substainably.
                    </h1>
                    <h1 className="text-4xl font-semibold pt-3 capitalize tracking-tight text-balance text-[#4CAF50] sm:text-5xl">
                      skip the GreenWashing.
                    </h1>
-                   <p className="mt-8 text-lg font-medium text-pretty text-gray-600   sm:text-xl/8">
-                     Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-                     commodo. Elit sunt amet fugiat veniam occaecat.
+                   <p className="mt-8 text-lg  font-Mon text-pretty text-gray-500   sm:text-xl/8">
+                     EcoWise uses advanced AI to dissect product claims, analyze environmental footprints, and recommend truly sustainable alternatives in real-time.
                    </p>
                  </div>
      
                  {/*input analyze*/}
-                 <Input />
+            <Input />
+          <p className=" pl-35 text-lg text-pretty text-gray-400 font-Inter  sm:text-xl/8">
+             Trusted by 50,000+ conscious shoppers       
+             </p>
                </div>
                <div
                  aria-hidden="true"
