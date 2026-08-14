@@ -1,13 +1,15 @@
+
+import logo from '../assets/logo.svg';
+
 export default function Footer() {
   return (
     <footer class="bg-[#185E20]  dark:bg-[#185E20] ">
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="flex capitalize text-3xl justify-center text-teal-600 dark:text-teal-300">
-          ecowise
+        <div class="flex capitalize font-Mon font-bold text-3xl gap-2 justify-center text-bg-neutral dark:text-bg-neutral">
+          <img src={logo} alt="ecowise logo" className="h-8 w-8" />EcoWise
         </div>
-        <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa
-          cum itaque neque.
+        <p class="mx-auto mt-6 max-w-md text-center font-Mon leading-relaxed text-gray-500 dark:text-gray-400">
+          EcoWise uses advanced AI to dissect product claims, analyze environmental footprints, and recommend truly sustainable alternatives in real-time.
         </p>
 
         <ul class="mt-12 flex justify-center gap-6 md:gap-8">
