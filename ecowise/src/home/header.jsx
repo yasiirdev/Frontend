@@ -27,8 +27,6 @@ export default function Header() {
 
         <div className="flex flex-1 items-center justify-end gap-6 md:flex-none">
           <div className="flex items-center gap-6 text-xs font-semibold uppercase text-gray-800">
-            <a className="capitalize hover:text-[#185E20] text-sm"> Sign In</a>
-
             <a className="hidden  flex-col items-center gap-1 transition   md:flex">
               <button
                 type="button"

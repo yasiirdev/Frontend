@@ -1,13 +1,9 @@
 export default function Page3() {
   return (
-    <section className="bg-main px-margin-mobile md:px-margin-desktop overflow-hidden pt-0 pb-16 md:pb-24">
+    <section className="bg-main p-3 px-margin-mobile md:px-margin-desktop overflow-hidden  pb-12 md:pb-24">
       <div className="mx-auto max-w-7xl items-center gap-10 md:flex">
         <div className="w-full md:w-1/2">
           <div className="max-w-xl">
-            <span className="mb-4 inline-flex items-center rounded-full border border-[#1D5B31]/15 bg-white/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#1D5B31] shadow-sm">
-              How it works
-            </span>
-
             <h2 className="mt-4 text-4xl font-bold leading-tight text-[#1D5B31] md:text-5xl">
               Transparency in Three Simple Steps.
             </h2>
