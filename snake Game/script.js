@@ -15,35 +15,6 @@ const main = () => {
   checkClearState();
 };
 
-document.querySelector(".start").style.display = "none";
-
-document.querySelector(".start").addEventListener("click", (e) => {
-  history.go(0);
-  e.stopPropagation();
-  document.querySelector(".start").style.display = "none";
-  document.querySelector(".normal").style.display = "block";
-  document.querySelector(".medium").style.display = "block";
-  document.querySelector(".hard").style.display = "block";
-});
-
-document.querySelector(".normal").addEventListener("click", (e) => {
-  e.stopPropagation();
-  document.querySelector(".controler").style.display = "none";
-  interval = setInterval(main, 250);
-});
-
-document.querySelector(".medium").addEventListener("click", (e) => {
-  e.stopPropagation();
-  document.querySelector(".controler").style.display = "none";
-  interval = setInterval(main, 150);
-});
-
-document.querySelector(".hard").addEventListener("click", (e) => {
-  e.stopPropagation();
-  document.querySelector(".controler").style.display = "none";
-  interval = setInterval(main, 100);
-});
-
 function clear() {
   clearInterval(interval);
   document.querySelector(".controler").style.display = "flex";
@@ -146,4 +117,33 @@ const eventStart = () => {
 // DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
   eventStart();
+
+  document.querySelector(".start").style.display = "none";
+
+  document.querySelector(".start").addEventListener("click", (e) => {
+    history.go(0);
+    e.stopPropagation();
+    document.querySelector(".start").style.display = "none";
+    document.querySelector(".normal").style.display = "block";
+    document.querySelector(".medium").style.display = "block";
+    document.querySelector(".hard").style.display = "block";
+  });
+
+  document.querySelector(".normal").addEventListener("click", (e) => {
+    e.stopPropagation();
+    document.querySelector(".controler").style.display = "none";
+    interval = setInterval(main, 250);
+  });
+
+  document.querySelector(".medium").addEventListener("click", (e) => {
+    e.stopPropagation();
+    document.querySelector(".controler").style.display = "none";
+    interval = setInterval(main, 150);
+  });
+
+  document.querySelector(".hard").addEventListener("click", (e) => {
+    e.stopPropagation();
+    document.querySelector(".controler").style.display = "none";
+    interval = setInterval(main, 100);
+  });
 });
