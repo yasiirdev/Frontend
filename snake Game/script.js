@@ -7,7 +7,7 @@ let snake = [
 ];
 // food state
 let foodDir = { x: 3, y: 5 };
-let interval = undefined;
+let interval = null;
 
 const main = () => {
   update();
@@ -15,22 +15,36 @@ const main = () => {
   checkClearState();
 };
 
-document.querySelector(".normal").addEventListener("click", () => {
+document.querySelector(".start").style.display = "none";
+
+document.querySelector(".start").addEventListener("click", (e) => {
+  history.go(0);
+  e.stopPropagation();
+  document.querySelector(".start").style.display = "none";
+  document.querySelector(".normal").style.display = "block";
+  document.querySelector(".medium").style.display = "block";
+  document.querySelector(".hard").style.display = "block";
+});
+
+document.querySelector(".normal").addEventListener("click", (e) => {
+  e.stopPropagation();
   document.querySelector(".controler").style.display = "none";
   interval = setInterval(main, 250);
 });
 
-document.querySelector(".medium").addEventListener("click", () => {
+document.querySelector(".medium").addEventListener("click", (e) => {
+  e.stopPropagation();
   document.querySelector(".controler").style.display = "none";
   interval = setInterval(main, 150);
 });
 
-document.querySelector(".hard").addEventListener("click", () => {
+document.querySelector(".hard").addEventListener("click", (e) => {
+  e.stopPropagation();
   document.querySelector(".controler").style.display = "none";
   interval = setInterval(main, 100);
 });
 
-const clear = () => {
+function clear() {
   clearInterval(interval);
   document.querySelector(".controler").style.display = "flex";
   document.querySelector(".gameboard").innerHTML = "";
@@ -39,12 +53,19 @@ const clear = () => {
   gameOver.innerText = "Game Over";
   gameOver.classList.add("boardText");
   document.querySelector(".gameboard").appendChild(gameOver);
-};
+
+  document.querySelector(".normal").style.display = "none";
+  document.querySelector(".medium").style.display = "none";
+  document.querySelector(".hard").style.display = "none";
+  document.querySelector(".start").style.display = "block";
+}
 
 function checkClearState() {
-  for (let i = 3; i <= snake.length; i++) {
-    let elem = snake[i];
-    snake[0].x === elem.x && snake[0].y === elem.y ? clear() : null;
+  if (snake[3]) {
+    for (let i = 3; i <= snake.length; i++) {
+      let elem = snake[i];
+      snake[0].x == elem?.x && snake[0].y == elem?.y ? clear() : null;
+    }
   }
 
   snake[0].y > GRID || snake[0].x > GRID || snake[0].y <= 0 || snake[0].x <= 0 ? clear() : null;
@@ -70,19 +91,14 @@ const foodIn = () => {
 
   if (snake[0].x === foodDir.x && snake[0].y === foodDir.y) {
     // start
-    const x_random = Math.round(Math.random() * 11) + 1;
-    const y_random = Math.round(Math.random() * 11) + 1;
+    const x_random = Math.round(Math.random() * GRID);
+    const y_random = Math.round(Math.random() * GRID);
 
     // loop start here
-    snake.forEach((chuck) => {
-      if (
-        chuck.y !== Number(food.style.gridColumnStart) &&
-        chuck.x !== Number(food.style.gridRowStart)
-      ) {
-        foodDir.x = x_random;
-        foodDir.y = y_random;
-      }
-    }); // loop end
+    if (x_random !== 0 && y_random !== 0) {
+      foodDir.x = x_random;
+      foodDir.y = y_random;
+    }
 
     snake.unshift({ x: Number(food.style.gridColumnStart), y: Number(food.style.gridRowStart) });
   } // end
@@ -106,6 +122,7 @@ function draw() {
 const eventStart = () => {
   let checkdir = "down";
   document.addEventListener("keydown", (e) => {
+    e.stopPropagation();
     if (e.key === "ArrowUp" && checkdir !== "down") {
       checkdir = "up";
       _DIR.y = -1;
