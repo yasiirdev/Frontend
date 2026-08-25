@@ -1,57 +1,111 @@
 export default function Page2() {
   return (
-    <div className="w-screen h-auto pt-10 bg-main">
-      <div className="flex items-center gap-8 justify-center w-screen min-h-100 bg-cover bg-center bg-no-repeat rounded-md ">
-        <div className="max-w-sm  backdrop-blur-sm border border-white/50 rounded-lg shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] p-6  relative before:absolute before:inset-0 before:rounded-lg after:bg-linear-to-tl before:bg-linear-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none">
-          <div className="relative z-10">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="w-8 h-8 text-green-300"
-                >
-                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                </svg>
-              </div>
-              <h3 class="text-lg font-Mon text-green-900 font-medium mb-2">
-                Carbon Footprint Tracking
-              </h3>
-              <p class="text-sm font-Inter opacity-90 mb-4 leading-relaxed">
-                We calculate the lifetime carbon emissions of every product,
-                from raw material extraction to final delivery.
-              </p>
-            </div>
+    <section className="relative overflow-hidden bg-[#f4fafd] px-5 py-20 sm:px-8 lg:px-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div className="max-w-2xl">
+            <p className="mb-3 font-Inter text-xs font-bold uppercase tracking-[0.22em] text-[#e15a5a]">
+              Clarity before checkout
+            </p>
+            <h2 className="font-Mon text-4xl font-bold leading-tight text-[#185e20] sm:text-5xl">
+              See the real cost of what you buy.
+            </h2>
           </div>
+          <p className="max-w-sm font-Inter text-base leading-7 text-[#506259]">
+            EcoWise turns hard-to-find sustainability data into a simple score
+            you can trust.
+          </p>
         </div>
-        {/*second container */}
 
-        {/* third*/}
-        <div className="max-w-sm  backdrop-blur-sm border border-white/50 rounded-lg shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] p-6  relative before:absolute before:inset-0 before:rounded-lg after:bg-linear-to-tl before:bg-linear-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none">
-          <div className="relative z-10">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2">
+        <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+          <article className="group relative overflow-hidden rounded-[2rem] bg-[#185e20] p-7 text-white shadow-[0_24px_60px_rgba(24,94,32,0.2)] transition duration-500 hover:-translate-y-1 sm:p-10">
+            <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full border-[28px] border-[#4caf50]/25 transition duration-700 group-hover:scale-110" />
+            <div className="relative z-10 flex h-full flex-col justify-between gap-14">
+              <div>
+                <div className="mb-8 flex items-center justify-between">
+                  <span className="rounded-full bg-white/12 px-3 py-1.5 font-Inter text-xs font-semibold tracking-wide text-[#d9f2c7]">
+                    LIVE ANALYSIS
+                  </span>
+                  <svg
+                    className="h-7 w-7 text-[#a7e476]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" />
+                  </svg>
+                </div>
+                <p className="font-Mon text-2xl font-semibold sm:text-3xl">
+                  Carbon footprint tracking
+                </p>
+                <p className="mt-3 max-w-md font-Inter text-sm leading-6 text-[#c4dec2]">
+                  Understand emissions across materials, manufacturing, and
+                  delivery, not just the marketing label on the box.
+                </p>
+              </div>
+              <div className="flex items-end justify-between border-t border-white/15 pt-6">
+                <div>
+                  <p className="font-Inter text-xs uppercase tracking-widest text-[#a7e476]">
+                    Average impact found
+                  </p>
+                  <p className="mt-1 font-Mon text-4xl font-bold">-38%</p>
+                </div>
+                <span className="font-Inter text-sm text-[#c4dec2]">
+                  per informed choice
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+            <article className="rounded-[2rem] border border-[#185e20]/10 bg-white p-7 shadow-[0_12px_35px_rgba(24,94,32,0.08)] transition duration-500 hover:-translate-y-1 sm:p-8">
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f1f8e9] text-[#185e20]">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="w-8 h-8 text-green-300"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  aria-hidden="true"
                 >
-                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                  <path d="M4 19V5m0 14h16M7 16l3-4 3 2 4-6" />
                 </svg>
               </div>
-              <h3 class="text-lg font-Mon text-green-900 font-medium mb-2">
-                Real-time Eco-Scoring
+              <h3 className="font-Mon text-xl font-bold text-[#185e20]">
+                Real-time eco-scoring
               </h3>
-              <p class="text-sm font-Inter opacity-90 mb-4 leading-relaxed">
-                Unlock advanced capabilities with our premium tier. Get access
-                to exclusive tools and enhanced.
+              <p className="mt-2 font-Inter text-sm leading-6 text-[#607168]">
+                A living score that weighs evidence, certifications, and the
+                full product journey.
               </p>
-            </div>
+            </article>
+            <article className="rounded-[2rem] border border-[#185e20]/10 bg-[#e8f3e0] p-7 shadow-[0_12px_35px_rgba(24,94,32,0.06)] transition duration-500 hover:-translate-y-1 sm:p-8">
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#185e20] text-[#bde88e]">
+                <svg
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3 5 6v5c0 4.5 2.9 8.4 7 10 4.1-1.6 7-5.5 7-10V6l-7-3Z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <h3 className="font-Mon text-xl font-bold text-[#185e20]">
+                Evidence, not greenwashing
+              </h3>
+              <p className="mt-2 font-Inter text-sm leading-6 text-[#607168]">
+                Spot vague claims quickly with transparent sources behind every
+                recommendation.
+              </p>
+            </article>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
