@@ -1,6 +1,6 @@
 export default function Field({ inputClass ,label, type = "text", placeholder, icon: Icon, ...props }) {
   return (
-    <label className="block space-y-2">
+    <label htmlFor="text" className="block space-y-2">
       <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-stone-500">
         {label}
       </span>
@@ -14,6 +14,7 @@ export default function Field({ inputClass ,label, type = "text", placeholder, i
           type={type}
           placeholder={placeholder}
           {...props}
+          name="text"
         />
       </span>
     </label>
