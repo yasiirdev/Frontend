@@ -11,7 +11,7 @@ export default function Page1() {
             className="w-full md:w-full h-auto rounded-md object-cover transition-transform duration-300 ease-in-out hover:scale-105 hover:brightness-110 hover:rotate-1"
           />
         </div>
-        <div className="flex flex-col items-center h-[40%] w-full ">
+        {/* <div className="flex flex-col items-center h-[40%] w-full ">
           <p className=" font-Inter pt-8 text-lg font-bold text-pretty text-[#185E20]   sm:text-xl/8">
                   Unmask the Truth
         </p>
@@ -21,7 +21,7 @@ export default function Page1() {
         <p className=" text-sm font-medium text-pretty text-gray-500 flex justify-center w-[50%] sm:text-sm">
           environmental impact report in seconds.
           </p>
-        </div>
+        </div> */}
       </div>
     </>
   );
