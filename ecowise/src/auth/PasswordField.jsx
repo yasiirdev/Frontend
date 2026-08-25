@@ -9,7 +9,7 @@ import {
 export default function PasswordField({ inputClass , label, placeholder, ...props }) {
   const [visible, setVisible] = useState(false);
   return (
-    <label className="block space-y-2">
+    <label htmlFor="password" className="block space-y-2">
       <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-stone-500">
         {label}
       </span>
@@ -23,6 +23,7 @@ export default function PasswordField({ inputClass , label, placeholder, ...prop
           type={visible ? "text" : "password"}
           placeholder={placeholder}
           {...props}
+          name="password"
         />
         <button
           type="button"
