@@ -1,13 +1,13 @@
 export default function Page2() {
   return (
-    <section className="relative overflow-hidden bg-[#f4fafd] px-5 py-20 sm:px-8 lg:px-16">
+    <section className="relative overflow-hidden bg-[#f4fafd] px-5 py-10 sm:py-20 sm:px-8 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <p className="mb-3 font-Inter text-xs font-bold uppercase tracking-[0.22em] text-[#e15a5a]">
               Clarity before checkout
             </p>
-            <h2 className="font-Mon text-4xl font-bold leading-tight text-[#185e20] sm:text-5xl">
+            <h2 className="font-Mon text-2xl font-bold leading-tight text-[#185e20] sm:text-5xl">
               See the real cost of what you buy.
             </h2>
           </div>
@@ -18,8 +18,8 @@ export default function Page2() {
         </div>
 
         <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-          <article className="group relative overflow-hidden rounded-[2rem] bg-[#185e20] p-7 text-white shadow-[0_24px_60px_rgba(24,94,32,0.2)] transition duration-500 hover:-translate-y-1 sm:p-10">
-            <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full border-[28px] border-[#4caf50]/25 transition duration-700 group-hover:scale-110" />
+          <article className="group relative overflow-hidden rounded-4xl bg-[#185e20] p-7 text-white shadow-[0_24px_60px_rgba(24,94,32,0.2)] transition duration-500 hover:-translate-y-1 sm:p-10">
+            <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full border-28 border-[#4caf50]/25 transition duration-700 group-hover:scale-110" />
             <div className="relative z-10 flex h-full flex-col justify-between gap-14">
               <div>
                 <div className="mb-8 flex items-center justify-between">
@@ -60,7 +60,7 @@ export default function Page2() {
           </article>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-            <article className="rounded-[2rem] border border-[#185e20]/10 bg-white p-7 shadow-[0_12px_35px_rgba(24,94,32,0.08)] transition duration-500 hover:-translate-y-1 sm:p-8">
+            <article className="rounded-4xl border border-[#185e20]/10 bg-white p-7 shadow-[0_12px_35px_rgba(24,94,32,0.08)] transition duration-500 hover:-translate-y-1 sm:p-8">
               <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f1f8e9] text-[#185e20]">
                 <svg
                   className="h-6 w-6"
@@ -81,7 +81,7 @@ export default function Page2() {
                 full product journey.
               </p>
             </article>
-            <article className="rounded-[2rem] border border-[#185e20]/10 bg-[#e8f3e0] p-7 shadow-[0_12px_35px_rgba(24,94,32,0.06)] transition duration-500 hover:-translate-y-1 sm:p-8">
+            <article className="rounded-4xl border border-[#185e20]/10 bg-[#e8f3e0] p-7 shadow-[0_12px_35px_rgba(24,94,32,0.06)] transition duration-500 hover:-translate-y-1 sm:p-8">
               <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#185e20] text-[#bde88e]">
                 <svg
                   className="h-6 w-6"

@@ -4,11 +4,11 @@ export default function Page3() {
       <div className="mx-auto max-w-7xl items-center gap-10 md:flex">
         <div className="w-full md:w-1/2">
           <div className="max-w-xl">
-            <h2 className="mt-4 text-4xl font-bold leading-tight text-[#1D5B31] md:text-5xl">
+            <h2 className="mt-4 text-2xl font-bold leading-tight text-[#1D5B31] md:text-5xl">
               Transparency in Three Simple Steps.
             </h2>
 
-            <p className="mt-5 text-lg text-[#3E4D44] md:text-xl">
+            <p className="mt-5 text-xm text-[#3E4D44] md:text-xl">
               We've built the world's most accessible sustainability tool. No
               browser extension required—just paste and learn.
             </p>
@@ -19,10 +19,10 @@ export default function Page3() {
                   1
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-[#1D5B31]">
+                  <h4 className=" text-xm sm:text-xl font-semibold text-[#1D5B31]">
                     Paste Product Link
                   </h4>
-                  <p className="mt-1 text-base text-[#3E4D44]">
+                  <p className="mt-1 text-xs sm:text-base text-[#3E4D44]">
                     Copy the URL from any major retailer and drop it into
                     EcoWise.
                   </p>
@@ -34,10 +34,10 @@ export default function Page3() {
                   2
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-[#1D5B31]">
+                  <h4 className="text-xm sm:text-xl font-semibold text-[#1D5B31]">
                     AI-Powered Analysis
                   </h4>
-                  <p className="mt-1 text-base text-[#3E4D44]">
+                  <p className="mt-1 text-xs  sm:text-base text-[#3E4D44]">
                     Our AI cross-references product specs with global
                     sustainability databases.
                   </p>
@@ -49,10 +49,10 @@ export default function Page3() {
                   3
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-[#1D5B31]">
+                  <h4 className=" text-xm sm:text-xl font-semibold text-[#1D5B31]">
                     Get Your Impact Report
                   </h4>
-                  <p className="mt-1 text-base text-[#3E4D44]">
+                  <p className="mt-1 text-xs  sm:text-base text-[#3E4D44]">
                     Review a detailed breakdown of carbon, water, and labor
                     ethics before you buy.
                   </p>

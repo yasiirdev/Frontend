@@ -1,41 +1,20 @@
 import { Link } from "react-router";
-import logo from "../assets/logo.svg";
-const navLinks = [
-  { nav: "Home", path: "home" },
-  { nav: "Features", path: "feature" },
-  { nav: "about", path: "about" },
-];
+import { LuLeaf } from "react-icons/lu";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-[#f4fafd]/85 px-3 pt-3 font-Inter backdrop-blur-xl sm:px-5">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-2xl border border-white/80 bg-white/75 px-3 shadow-[0_10px_30px_rgba(24,94,32,0.1)] sm:px-5">
+    <header className="sticky top-0 z-40 bg-main px-3 pt-3 font-Inter backdrop-blur-xl sm:px-5">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-2xl border border-white/80 bg-transparent   px-3 shadow-[0_10px_30px_rgba(24,94,32,0.1)] sm:px-5">
         <div className="flex items-center gap-8 lg:gap-16">
-          <a
-            href="#top"
-            className="flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-[#185e20]"
+          <Link
+            href="/"
+            className="flex items-center gap-1 sm:gap-2.5 text-xs sm:text-2xl font-extrabold tracking-tight text-[#185e20]"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f1f8e9] shadow-inner">
-              <img src={logo} alt="EcoWise logo" className="h-7 w-7" />
-            </span>
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-900 text-lime-200 shadow-sm">
+              <LuLeaf size={24} />
+            </div>
             EcoWise
-          </a>
-          <nav
-            className="hidden items-center gap-1 text-sm font-semibold text-[#506259] md:flex"
-            aria-label="Main navigation"
-          >
-            {navLinks.map((item) => {
-              return (
-                <Link 
-                   key={item.nav}
-                  to={item.path}
-                  className={`rounded-full px-4 py-2 transition hover:bg-[#f1f8e9] hover:text-[#185e20] ${item.nav === "Home" ? "bg-[#f1f8e9] text-[#185e20]" : ""}`}
-                >
-                  {item.nav}
-                </Link>
-              );
-            })}
-          </nav>
+          </Link>
         </div>
 
         <Link
