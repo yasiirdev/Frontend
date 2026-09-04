@@ -1,17 +1,23 @@
-import { useState } from "react";
+//import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setMode } from "../state/reducer/menu";
 import ecoWiseImage from "../assets/login.jpg";
 import Login from "./login";
 import Registor from "./register";
 
-
 export default function Form() {
-  const [mode, setMode] = useState("login");
+  const { mode } = useSelector((store) => store.menu);
+  const dispatch = useDispatch();
   const isLogin = mode === "login";
+
+  const handleNavigation = () => {
+    dispatch(setMode(isLogin ? "signup" : "login"));
+  };
 
   return (
     <main className="min-h-screen bg-[#f5f4ef] p-4 font-Inter text-stone-800 sm:p-6 lg:p-10">
-      <div className="mx-auto grid min-h-[calc(100vh-2rem)] max-w-6xl overflow-hidden rounded-4xl bg-white shadow-[0_24px_80px_rgba(35,58,39,0.12)] sm:min-h-[calc(100vh-3rem)] md:grid-cols-[0.9fr_1.1fr]">
-        <aside className="relative min-h-64 overflow-hidden bg-emerald-950 md:min-h-full">
+      <div className="mx-auto grid min-h-[calc(100vh-2rem)] sm:max-w-6xl overflow-hidden rounded-4xl bg-white shadow-[0_24px_80px_rgba(35,58,39,0.12)] sm:min-h-[calc(100vh-3rem)] md:grid-cols-[0.9fr_1.1fr]">
+        <aside className="hidden md:block relative min-h-64 overflow-hidden bg-emerald-950 md:min-h-full ">
           <img
             src={ecoWiseImage}
             alt="EcoWise sustainability platform in a forest"
@@ -31,10 +37,10 @@ export default function Form() {
             </p>
           </div>
         </aside>
-        <section className="flex items-center justify-center p-7 sm:p-12 md:p-14 lg:p-16">
-          <div className="w-full max-w-md">
+        <section className="flex items-center justify-center p-7  sm:p-12 md:p-14 lg:p-16">
+          <div className="w-full md:w-full max-w-md">
             <div className="mb-9">
-              <div className="mb-7 flex rounded-xl bg-stone-100 p-1 text-sm font-semibold">
+              {/* <div className="mb-7 flex rounded-xl bg-stone-100 p-1 text-sm font-semibold">
                 <button
                   type="button"
                   onClick={() => setMode("login")}
@@ -49,7 +55,7 @@ export default function Form() {
                 >
                   Create account
                 </button>
-              </div>
+              </div>*/}
               <p className="mb-2 text-sm font-semibold text-emerald-700">
                 {isLogin ? "Welcome back" : "Start your journey"}
               </p>
@@ -63,13 +69,13 @@ export default function Form() {
               </p>
             </div>
 
-            {isLogin ? <Login/> : <Registor/> }
-            
+            {isLogin ? <Login /> : <Registor />}
+
             <p className="mt-8 text-center text-xs text-stone-500">
               {isLogin ? "New to EcoWise?" : "Already have an account?"}{" "}
               <button
                 type="button"
-                onClick={() => setMode(isLogin ? "signup" : "login")}
+                onClick={() => handleNavigation()}
                 className="font-bold text-emerald-700 hover:underline"
               >
                 {isLogin ? "Create an account" : "Log in"}

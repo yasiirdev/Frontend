@@ -24,6 +24,7 @@ export default function PasswordField({ inputClass , label, placeholder, ...prop
           placeholder={placeholder}
           {...props}
           name="password"
+          id="password"
         />
         <button
           type="button"

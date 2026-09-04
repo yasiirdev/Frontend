@@ -1,13 +1,21 @@
+import { useNavigate } from "react-router";
 import Field from "./Field";
 import PasswordField from "./PasswordField";
 import { FiArrowRight, FiMail } from "react-icons/fi";
 
 export default function Login() { 
- const inputClass =
+  const navigate = useNavigate();
+  const inputClass =
    "w-full rounded-xl border border-stone-200 bg-white/80 px-4 py-3.5 text-sm text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10";
 
+  const HandlerSubmit = (e) => { 
+    e.preventDefault();
+    navigate("/auth/app");
+  }
+
+
     return (
-      <form onSubmit={(event) => event.preventDefault()} className="space-y-5">
+      <form onSubmit={HandlerSubmit} className="space-y-5">
         <Field 
           label="Email address"
           type="email"

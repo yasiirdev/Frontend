@@ -15,6 +15,7 @@ export default function Field({ inputClass ,label, type = "text", placeholder, i
           placeholder={placeholder}
           {...props}
           name="text"
+          id="text"
         />
       </span>
     </label>
