@@ -1,12 +1,13 @@
+import { Outlet } from "react-router";
 import "./App.css";
-//import { Main } from "./home/main";
-import Form from "./auth/Form";
+import Footer from "./home/footer";
+import Header from "./home/header";
 function App() {
   return (
     <>
-      <div>
-        <Form />
-      </div>
+  <Header />
+  <Outlet/>
+  <Footer/>
     </>
   );
 }
